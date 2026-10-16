@@ -1,0 +1,1709 @@
+{
+  "meta": {
+    "version": "0.1-review",
+    "date": "2026-10-15",
+    "currency": "VND",
+    "demoClock": "2026-10-15",
+    "warning": "TẤT CẢ LÀ MOCK, các bổ sung DEMO và quy tắc ghép bộ cần nhóm rà, không phải dữ liệu hay phương pháp thuế thực tế HTX",
+    "sourceFacts": "Giữ mã và số dư UC01 theo tab Du_lieu_dung_chung",
+    "legacyPolicy": "Bộ Ly giữ nguyên trong hồ sơ đối chiếu, không nạp phân bón hoặc 5% vào bộ tương ớt mặc định",
+    "startup": "Nạp initialState đúng một lần, khôi phục localStorage nếu cùng schemaVersion, không nạp kết quả kỳ vọng vào số dư ban đầu"
+  },
+  "customers": [
+    {
+      "id": "KH-001",
+      "name": "Khách hàng A",
+      "openingBalance": 0,
+      "creditLimit": 30000000.0,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 6"
+    },
+    {
+      "id": "KH-002",
+      "name": "Khách hàng B",
+      "openingBalance": 5000000,
+      "creditLimit": 30000000.0,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 7"
+    },
+    {
+      "id": "KH-003",
+      "name": "Khách hàng C",
+      "openingBalance": 0,
+      "creditLimit": 30000000.0,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 8"
+    },
+    {
+      "id": "KH-004",
+      "name": "Khách hàng D",
+      "openingBalance": 5000000,
+      "creditLimit": 10000000.0,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 9"
+    },
+    {
+      "id": "KH-005",
+      "name": "Khách hàng E",
+      "openingBalance": 0,
+      "creditLimit": 30000000.0,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 10"
+    },
+    {
+      "id": "KH-006",
+      "name": "Khách hàng F",
+      "openingBalance": 2000000,
+      "creditLimit": null,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 11"
+    },
+    {
+      "id": "KH-007",
+      "name": "Khách hàng G",
+      "openingBalance": 7000000,
+      "creditLimit": 30000000.0,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 12"
+    },
+    {
+      "id": "KH-008",
+      "name": "Khách hàng H",
+      "openingBalance": 5000000,
+      "creditLimit": 30000000.0,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 13"
+    },
+    {
+      "id": "DEMO-KH-A",
+      "name": "Đại lý Tương ớt An Bình",
+      "openingBalance": 3240000,
+      "creditLimit": null,
+      "group": "Khách hàng demo liên thông",
+      "origin": "Đề xuất mock bổ sung, không thay khách của Ly"
+    },
+    {
+      "id": "DEMO-KH-B",
+      "name": "Cửa hàng Tương ớt Bình Minh",
+      "openingBalance": 1080000,
+      "creditLimit": null,
+      "group": "Khách hàng demo liên thông",
+      "origin": "Đề xuất mock bổ sung"
+    }
+  ],
+  "items": [
+    {
+      "id": "MH-MK250",
+      "name": "Tương ớt Mường Khương 250ml",
+      "unit": "Chai"
+    },
+    {
+      "id": "MH-MK500",
+      "name": "Tương ớt Mường Khương 500ml",
+      "unit": "Chai"
+    }
+  ],
+  "uc01Sources": [
+    {
+      "id": "CTBH-001",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-001",
+      "invoiceId": "HD-001",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 10000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 10000000,
+      "orderId": "DH-001",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 10000000,
+      "origin": "Nguồn bảng chung dòng 40",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-001",
+      "netIncrease": 9259259,
+      "taxIncrease": 740741,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 10000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 9259259
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 740741
+        }
+      ],
+      "balanceIncrement": 10000000
+    },
+    {
+      "id": "CTBH-002",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-002",
+      "invoiceId": "HD-002",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 6000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 6000000,
+      "orderId": "DH-002",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 11000000,
+      "origin": "Nguồn bảng chung dòng 41",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-002",
+      "netIncrease": 5555556,
+      "taxIncrease": 444444,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 6000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 5555556
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 444444
+        }
+      ],
+      "balanceIncrement": 6000000
+    },
+    {
+      "id": "CTBH-003",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-003",
+      "invoiceId": "HD-003",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 8000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 8000000,
+      "orderId": null,
+      "contractId": "HDONG-001",
+      "deliveryBatch": "Đợt 1",
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 8000000,
+      "origin": "Nguồn bảng chung dòng 42",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-003",
+      "netIncrease": 7407407,
+      "taxIncrease": 592593,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 8000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 7407407
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 592593
+        }
+      ],
+      "balanceIncrement": 8000000
+    },
+    {
+      "id": "CTBH-004",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-004",
+      "invoiceId": "HD-004",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 6000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 6000000,
+      "orderId": null,
+      "contractId": "HDONG-002",
+      "deliveryBatch": "Đợt 2",
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 11000000,
+      "origin": "Nguồn bảng chung dòng 43",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-004",
+      "netIncrease": 5555556,
+      "taxIncrease": 444444,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 6000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 5555556
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 444444
+        }
+      ],
+      "balanceIncrement": 6000000
+    },
+    {
+      "id": "CTBH-005",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-005",
+      "invoiceId": "HD-005",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 10000000,
+      "allocatedBeforeIntake": 3000000,
+      "outstandingAfter": 7000000,
+      "orderId": "DH-005",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 7000000,
+      "origin": "Nguồn bảng chung dòng 44",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-005",
+      "netIncrease": 9259259,
+      "taxIncrease": 740741,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 10000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 9259259
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 740741
+        }
+      ],
+      "balanceIncrement": 7000000,
+      "legacyAllocationNote": "PB-005 được mang theo trong bộ nền UC01, không tạo thêm bút toán hoặc phân bổ tại UC01, số dư trước bằng 0 theo nguồn, cần nhóm rà mô hình thời điểm phản ánh ứng trước"
+    },
+    {
+      "id": "CTDV-001",
+      "type": "Chứng từ bán hàng dịch vụ",
+      "customerId": "KH-006",
+      "invoiceId": "VC-001",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 1000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 1000000,
+      "orderId": "DEMO-DH-VC-001",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 3000000,
+      "origin": "Nguồn bảng chung dòng 45",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTDV-001",
+      "netIncrease": 925926,
+      "taxIncrease": 74074,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 1000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 925926
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 74074
+        }
+      ],
+      "balanceIncrement": 1000000
+    },
+    {
+      "id": "CTDC-001",
+      "type": "Chứng từ điều chỉnh tăng công nợ",
+      "customerId": "KH-007",
+      "invoiceId": "DC-001",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 2000000,
+      "allocatedBeforeIntake": 3000000,
+      "outstandingAfter": 9000000,
+      "orderId": null,
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 9000000,
+      "origin": "Nguồn bảng chung dòng 46",
+      "version": 1,
+      "valid": true,
+      "originalSourceId": "CTBH-GOC-001",
+      "originalInvoiceId": "HD-GOC-001",
+      "receivableId": "CN-001",
+      "agreementId": "BB-MOCK-001",
+      "netIncrease": 1851852,
+      "taxIncrease": 148148,
+      "reason": "Hóa đơn gốc ghi thiếu giá bán",
+      "taxRate": 0.08,
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 2000000
+        },
+        {
+          "side": "Có",
+          "account": "5112",
+          "amount": 1851852
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 148148
+        }
+      ],
+      "balanceIncrement": 2000000
+    },
+    {
+      "id": "CTBH-006",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-008",
+      "invoiceId": "HD-006",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 5000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 5000000,
+      "orderId": "DH-008",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Đã hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": true,
+      "existingJournalId": "BT-006",
+      "expectedCustomerBalance": 5000000,
+      "origin": "Nguồn bảng chung dòng 47",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-006",
+      "journalProposal": null,
+      "balanceIncrement": 0
+    }
+  ],
+  "invoices": [
+    {
+      "id": "DEMO-HD-CU-002",
+      "customerId": "KH-002",
+      "gross": 5000000,
+      "issuedAt": "2026-09-01",
+      "dueAt": null,
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": null,
+      "tax": null,
+      "taxRate": null,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung"
+    },
+    {
+      "id": "DEMO-HD-CU-004",
+      "customerId": "KH-004",
+      "gross": 5000000,
+      "issuedAt": "2026-09-01",
+      "dueAt": null,
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": null,
+      "tax": null,
+      "taxRate": null,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung"
+    },
+    {
+      "id": "DEMO-HD-CU-006",
+      "customerId": "KH-006",
+      "gross": 2000000,
+      "issuedAt": "2026-09-01",
+      "dueAt": null,
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": null,
+      "tax": null,
+      "taxRate": null,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung"
+    },
+    {
+      "id": "HD-GOC-001",
+      "customerId": "KH-007",
+      "gross": 10000000,
+      "issuedAt": "2026-10-01",
+      "dueAt": "2026-11-12",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 9259259,
+      "tax": 740741,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Nguồn mock UC01 DC-001",
+      "number": "00000015",
+      "series": "C26TAA",
+      "form": "1"
+    },
+    {
+      "id": "HD-006",
+      "customerId": "KH-008",
+      "gross": 5000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": null,
+      "tax": null,
+      "taxRate": null,
+      "lines": [],
+      "origin": "Nguồn mock UC01, đã phản ánh số dư",
+      "sourceId": "CTBH-006"
+    },
+    {
+      "id": "HD-001",
+      "customerId": "KH-001",
+      "gross": 10000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 9259259,
+      "tax": 740741,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-001",
+      "orderId": "DH-001",
+      "contractId": null,
+      "deliveryBatch": null
+    },
+    {
+      "id": "HD-002",
+      "customerId": "KH-002",
+      "gross": 6000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 5555556,
+      "tax": 444444,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-002",
+      "orderId": "DH-002",
+      "contractId": null,
+      "deliveryBatch": null
+    },
+    {
+      "id": "HD-003",
+      "customerId": "KH-003",
+      "gross": 8000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 7407407,
+      "tax": 592593,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-003",
+      "orderId": null,
+      "contractId": "HDONG-001",
+      "deliveryBatch": "Đợt 1"
+    },
+    {
+      "id": "HD-004",
+      "customerId": "KH-004",
+      "gross": 6000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 5555556,
+      "tax": 444444,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-004",
+      "orderId": null,
+      "contractId": "HDONG-002",
+      "deliveryBatch": "Đợt 2"
+    },
+    {
+      "id": "HD-005",
+      "customerId": "KH-005",
+      "gross": 10000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 9259259,
+      "tax": 740741,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-005",
+      "orderId": "DH-005",
+      "contractId": null,
+      "deliveryBatch": null
+    },
+    {
+      "id": "VC-001",
+      "customerId": "KH-006",
+      "gross": 1000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": null,
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 925926,
+      "tax": 74074,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTDV-001",
+      "orderId": null,
+      "contractId": null,
+      "deliveryBatch": null
+    },
+    {
+      "id": "DC-001",
+      "customerId": "KH-007",
+      "gross": 2000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending_adjustment",
+      "currency": "VND",
+      "net": 1851852,
+      "tax": 148148,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Nguồn DC-001, chỉ chứa phần tăng",
+      "number": "00000031",
+      "series": "C26TAA",
+      "form": "1",
+      "originalInvoiceId": "HD-GOC-001"
+    },
+    {
+      "id": "DEMO-HD-A1",
+      "customerId": "DEMO-KH-A",
+      "gross": 2160000,
+      "issuedAt": "2026-09-20",
+      "dueAt": "2026-10-01",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 2000000,
+      "tax": 160000,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK250",
+          "quantity": 50,
+          "unitPrice": 40000,
+          "net": 2000000,
+          "tax": 160000,
+          "gross": 2160000
+        }
+      ],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "orderId": "DEMO-DH-A1",
+      "contractId": null,
+      "deliveryBatch": null
+    },
+    {
+      "id": "DEMO-HD-A2",
+      "customerId": "DEMO-KH-A",
+      "gross": 1080000,
+      "issuedAt": "2026-09-20",
+      "dueAt": "2026-10-15",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 1000000,
+      "tax": 80000,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK500",
+          "quantity": 20,
+          "unitPrice": 50000,
+          "net": 1000000,
+          "tax": 80000,
+          "gross": 1080000
+        }
+      ],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "orderId": null,
+      "contractId": "DEMO-HOPDONG-A",
+      "deliveryBatch": "Đợt 1"
+    },
+    {
+      "id": "DEMO-HD-B1",
+      "customerId": "DEMO-KH-B",
+      "gross": 1080000,
+      "issuedAt": "2026-09-20",
+      "dueAt": "2026-10-20",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 1000000,
+      "tax": 80000,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK500",
+          "quantity": 20,
+          "unitPrice": 50000,
+          "net": 1000000,
+          "tax": 80000,
+          "gross": 1080000
+        }
+      ],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "orderId": "DEMO-DH-B1",
+      "contractId": null,
+      "deliveryBatch": null
+    }
+  ],
+  "initialReceivables": [
+    {
+      "id": "DEMO-CN-CU-002",
+      "invoiceId": "DEMO-HD-CU-002",
+      "customerId": "KH-002",
+      "gross": 5000000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 5000000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "DEMO-CN-CU-004",
+      "invoiceId": "DEMO-HD-CU-004",
+      "customerId": "KH-004",
+      "gross": 5000000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 5000000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "DEMO-CN-CU-006",
+      "invoiceId": "DEMO-HD-CU-006",
+      "customerId": "KH-006",
+      "gross": 2000000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 2000000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "CN-001",
+      "invoiceId": "HD-GOC-001",
+      "customerId": "KH-007",
+      "gross": 10000000,
+      "historicalAllocatedCredits": 3000000,
+      "openingOutstanding": 7000000,
+      "status": "recognized",
+      "origin": "Nguồn mock UC01, 10 triệu trừ 3 triệu",
+      "sourceId": "CTBH-GOC-001",
+      "historicalAllocationId": "PB-GOC-001"
+    },
+    {
+      "id": "DEMO-CN-006",
+      "invoiceId": "HD-006",
+      "customerId": "KH-008",
+      "gross": 5000000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 5000000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu",
+      "sourceId": "CTBH-006"
+    },
+    {
+      "id": "DEMO-CN-DEMO-HD-A1",
+      "invoiceId": "DEMO-HD-A1",
+      "customerId": "DEMO-KH-A",
+      "gross": 2160000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 2160000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "DEMO-CN-DEMO-HD-A2",
+      "invoiceId": "DEMO-HD-A2",
+      "customerId": "DEMO-KH-A",
+      "gross": 1080000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 1080000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "DEMO-CN-DEMO-HD-B1",
+      "invoiceId": "DEMO-HD-B1",
+      "customerId": "DEMO-KH-B",
+      "gross": 1080000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 1080000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    }
+  ],
+  "sourceDocuments": [
+    {
+      "id": "DH-001",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-001",
+      "sourceId": "CTBH-001",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-001",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DEMO-PGH-CTBH-001",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-001",
+      "sourceId": "CTBH-001",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-001",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DH-002",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-002",
+      "sourceId": "CTBH-002",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-002",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DEMO-PGH-CTBH-002",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-002",
+      "sourceId": "CTBH-002",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-002",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "HDONG-001",
+      "type": "Hợp đồng",
+      "customerId": "KH-003",
+      "sourceId": "CTBH-003",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-003",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DEMO-PGH-CTBH-003",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-003",
+      "sourceId": "CTBH-003",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-003",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "HDONG-002",
+      "type": "Hợp đồng",
+      "customerId": "KH-004",
+      "sourceId": "CTBH-004",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-004",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DEMO-PGH-CTBH-004",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-004",
+      "sourceId": "CTBH-004",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-004",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DH-005",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-005",
+      "sourceId": "CTBH-005",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-005",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DEMO-PGH-CTBH-005",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-005",
+      "sourceId": "CTBH-005",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-005",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DEMO-DH-VC-001",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-006",
+      "sourceId": "CTDV-001",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTDV-001",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DEMO-PGH-CTDV-001",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-006",
+      "sourceId": "CTDV-001",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTDV-001",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DH-008",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-008",
+      "sourceId": "CTBH-006",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-006",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "DEMO-PGH-CTBH-006",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-008",
+      "sourceId": "CTBH-006",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-006",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung"
+    },
+    {
+      "id": "BB-MOCK-001",
+      "type": "Văn bản thỏa thuận về sai sót hóa đơn",
+      "customerId": "KH-007",
+      "sourceId": "CTDC-001",
+      "issuedAt": "2026-10-12",
+      "content": "DỮ LIỆU GIẢ LẬP PHỤC VỤ HỌC TẬP, HTX Hoa Lợi và Khách hàng G thống nhất điều chỉnh hóa đơn 00000015 ngày 01/10/2026, tăng trước thuế 1.851.852 VND, thuế 148.148 VND, tổng tăng 2.000.000 VND",
+      "origin": "Nội dung mock trong bảng chung, không dựng chữ ký hoặc con dấu"
+    },
+    {
+      "id": "DEMO-HDDC-DEMO-PTH-B1",
+      "type": "Hóa đơn điều chỉnh giảm",
+      "customerId": "DEMO-KH-B",
+      "originalInvoiceId": "DEMO-HD-B1",
+      "net": 200000,
+      "tax": 16000,
+      "gross": 216000,
+      "origin": "Đề xuất mock, chỉ tiếp nhận khi nguồn đã duyệt"
+    },
+    {
+      "id": "DEMO-HDDC-DEMO-BBGG-B1",
+      "type": "Hóa đơn điều chỉnh giảm",
+      "customerId": "DEMO-KH-B",
+      "originalInvoiceId": "DEMO-HD-B1",
+      "net": 100000,
+      "tax": 8000,
+      "gross": 108000,
+      "origin": "Đề xuất mock, chỉ tiếp nhận khi nguồn đã duyệt"
+    },
+    {
+      "id": "DEMO-HDDC-DEMO-BBSS-B1",
+      "type": "Hóa đơn điều chỉnh giảm",
+      "customerId": "DEMO-KH-B",
+      "originalInvoiceId": "DEMO-HD-B1",
+      "net": 100000,
+      "tax": 8000,
+      "gross": 108000,
+      "origin": "Đề xuất mock, chỉ tiếp nhận khi nguồn đã duyệt"
+    },
+    {
+      "id": "DEMO-SK-DEMO-GBC-A2",
+      "type": "Sao kê ngân hàng",
+      "sourceId": "DEMO-GBC-A2",
+      "customerId": "DEMO-KH-A",
+      "gross": 4000000,
+      "origin": "Hồ sơ giả lập cho giấy báo Có, không có tài khoản ngân hàng thật"
+    },
+    {
+      "id": "DEMO-SK-DEMO-GBC-CHIDINH",
+      "type": "Sao kê ngân hàng",
+      "sourceId": "DEMO-GBC-CHIDINH",
+      "customerId": "KH-007",
+      "gross": 1000000,
+      "origin": "Hồ sơ giả lập cho giấy báo Có, không có tài khoản ngân hàng thật"
+    },
+    {
+      "id": "DEMO-SK-DEMO-GBC-GIAMHET",
+      "type": "Sao kê ngân hàng",
+      "sourceId": "DEMO-GBC-GIAMHET",
+      "customerId": "KH-007",
+      "gross": 9000000,
+      "origin": "Hồ sơ giả lập cho giấy báo Có, không có tài khoản ngân hàng thật"
+    },
+    {
+      "id": "DEMO-SK-DEMO-GBC-KHONGPB",
+      "type": "Sao kê ngân hàng",
+      "sourceId": "DEMO-GBC-KHONGPB",
+      "customerId": "DEMO-KH-B",
+      "gross": 100000,
+      "origin": "Hồ sơ giả lập cho giấy báo Có, không có tài khoản ngân hàng thật"
+    }
+  ],
+  "uc02Sources": [
+    {
+      "id": "DEMO-PT-A1",
+      "type": "Phiếu thu",
+      "customerId": "DEMO-KH-A",
+      "amount": 1000000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Tự động phân bổ",
+      "defaultDebitAccount": "111",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "payer": "Đại lý Tương ớt An Bình",
+      "cashier": "Thủ quỹ demo"
+    },
+    {
+      "id": "DEMO-GBC-A2",
+      "type": "Giấy báo Có",
+      "customerId": "DEMO-KH-A",
+      "amount": 4000000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Tự động phân bổ",
+      "defaultDebitAccount": "112",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "bank": "Ngân hàng minh họa",
+      "bankAccount": "DEMO-ACCOUNT-MASKED",
+      "bankReference": "DEMO-REF-DEMO-GBC-A2",
+      "transferContent": "Thanh toán công nợ theo chứng từ nguồn"
+    },
+    {
+      "id": "DEMO-PT-TRUOC",
+      "type": "Phiếu thu",
+      "customerId": "KH-001",
+      "amount": 1500000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Chỉ ghi giảm",
+      "defaultDebitAccount": "111",
+      "reason": "Khoản trả trước chưa có khoản phải thu đủ điều kiện",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "payer": "Khách hàng A",
+      "cashier": "Thủ quỹ demo"
+    },
+    {
+      "id": "DEMO-GBC-CHIDINH",
+      "type": "Giấy báo Có",
+      "customerId": "KH-007",
+      "amount": 1000000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Chỉ định hóa đơn",
+      "defaultDebitAccount": "112",
+      "invoiceId": "HD-GOC-001",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "bank": "Ngân hàng minh họa",
+      "bankAccount": "DEMO-ACCOUNT-MASKED",
+      "bankReference": "DEMO-REF-DEMO-GBC-CHIDINH",
+      "transferContent": "Thanh toán công nợ theo chứng từ nguồn"
+    },
+    {
+      "id": "DEMO-PTH-B1",
+      "type": "Phiếu trả hàng",
+      "customerId": "DEMO-KH-B",
+      "amount": 216000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "invoiceId": "DEMO-HD-B1",
+      "net": 200000,
+      "tax": 16000,
+      "taxRate": 0.08,
+      "adjustmentInvoiceId": "DEMO-HDDC-DEMO-PTH-B1",
+      "defaultDebitAccount": "521",
+      "taxAccount": "3331",
+      "reason": "Đề xuất tình huống thử trên tương ớt, số lượng hoặc giá theo hồ sơ mock",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn"
+    },
+    {
+      "id": "DEMO-BBGG-B1",
+      "type": "Biên bản giảm giá",
+      "customerId": "DEMO-KH-B",
+      "amount": 108000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "invoiceId": "DEMO-HD-B1",
+      "net": 100000,
+      "tax": 8000,
+      "taxRate": 0.08,
+      "adjustmentInvoiceId": "DEMO-HDDC-DEMO-BBGG-B1",
+      "defaultDebitAccount": "521",
+      "taxAccount": "3331",
+      "reason": "Đề xuất tình huống thử trên tương ớt, số lượng hoặc giá theo hồ sơ mock",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn"
+    },
+    {
+      "id": "DEMO-BBSS-B1",
+      "type": "Biên bản điều chỉnh sai sót",
+      "customerId": "DEMO-KH-B",
+      "amount": 108000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "invoiceId": "DEMO-HD-B1",
+      "net": 100000,
+      "tax": 8000,
+      "taxRate": 0.08,
+      "adjustmentInvoiceId": "DEMO-HDDC-DEMO-BBSS-B1",
+      "defaultDebitAccount": "511",
+      "taxAccount": "3331",
+      "reason": "Đề xuất tình huống thử trên tương ớt, số lượng hoặc giá theo hồ sơ mock",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn"
+    },
+    {
+      "id": "DEMO-GBC-GIAMHET",
+      "type": "Giấy báo Có",
+      "customerId": "KH-007",
+      "amount": 9000000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Chỉ định hóa đơn",
+      "defaultDebitAccount": "112",
+      "invoiceId": "HD-GOC-001",
+      "scenarioRequirement": "Chạy sau CTDC-001, độc lập với DEMO-GBC-CHIDINH",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "bank": "Ngân hàng minh họa",
+      "bankAccount": "DEMO-ACCOUNT-MASKED",
+      "bankReference": "DEMO-REF-DEMO-GBC-GIAMHET",
+      "transferContent": "Thanh toán công nợ theo chứng từ nguồn"
+    },
+    {
+      "id": "DEMO-GBC-KHONGPB",
+      "type": "Giấy báo Có",
+      "customerId": "DEMO-KH-B",
+      "amount": 100000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Chỉ ghi giảm",
+      "defaultDebitAccount": "112",
+      "reason": "Chờ xác nhận hóa đơn, vẫn ghi giảm số dư khách hàng",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "bank": "Ngân hàng minh họa",
+      "bankAccount": "DEMO-ACCOUNT-MASKED",
+      "bankReference": "DEMO-REF-DEMO-GBC-KHONGPB",
+      "transferContent": "Chờ xác nhận hóa đơn, vẫn ghi giảm số dư khách hàng"
+    }
+  ],
+  "initialAllocations": [
+    {
+      "id": "PB-GOC-001",
+      "invoiceId": "HD-GOC-001",
+      "customerId": "KH-007",
+      "amount": 3000000,
+      "alreadyInOpening": true
+    },
+    {
+      "id": "PB-005",
+      "invoiceId": "HD-005",
+      "customerId": "KH-005",
+      "amount": 3000000,
+      "carriedWithUc01": true,
+      "alreadyInOpening": false
+    }
+  ],
+  "reconciliations": [
+    {
+      "id": "DEMO-DC-001",
+      "customerId": "KH-001",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Đang xử lý",
+      "opening": 0,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 0,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-002",
+      "customerId": "KH-002",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Khớp",
+      "opening": 5000000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 5000000,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": true,
+      "confirmationNote": "Phản hồi mẫu đã xác nhận"
+    },
+    {
+      "id": "DEMO-DC-003",
+      "customerId": "KH-003",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Chờ xử lý",
+      "opening": 0,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 0,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-004",
+      "customerId": "KH-004",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Đang xử lý",
+      "opening": 5000000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 5000000,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-005",
+      "customerId": "KH-005",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Khớp",
+      "opening": 0,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 0,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": true,
+      "confirmationNote": "Phản hồi mẫu đã xác nhận"
+    },
+    {
+      "id": "DEMO-DC-006",
+      "customerId": "KH-006",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Đang xử lý",
+      "opening": 2000000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 2000000,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    }
+  ],
+  "externalComparisonFixtures": [
+    {
+      "id": "DEMO-FILE-1",
+      "candidateId": "DEMO-TX-1",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-1",
+        "amount": 100000,
+        "balance": 200000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-1",
+        "amount": 100000,
+        "balance": 200000
+      },
+      "expected": "Khớp",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-2",
+      "candidateId": "DEMO-TX-2",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-2",
+        "amount": 200000,
+        "balance": 400000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-2",
+        "amount": 200000,
+        "balance": 400000
+      },
+      "expected": "Khớp",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-3",
+      "candidateId": "DEMO-TX-3",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-3",
+        "amount": 300000,
+        "balance": 600000
+      },
+      "file": {
+        "date": "2026-10-02",
+        "document": "DEMO-TX-3",
+        "amount": 300000,
+        "balance": 600000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-4",
+      "candidateId": "DEMO-TX-4",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-4",
+        "amount": 400000,
+        "balance": 800000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-SAI-SO",
+        "amount": 400000,
+        "balance": 800000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-5",
+      "candidateId": "DEMO-TX-5",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-5",
+        "amount": 500000,
+        "balance": 1000000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-5",
+        "amount": 501000,
+        "balance": 1000000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-6",
+      "candidateId": "DEMO-TX-6",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-6",
+        "amount": 600000,
+        "balance": 1200000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-6",
+        "amount": 600000,
+        "balance": 1201000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-7",
+      "candidateId": "DEMO-TX-7",
+      "system": null,
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-7",
+        "amount": 700000,
+        "balance": 1400000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-8",
+      "candidateId": "DEMO-TX-8",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-8",
+        "amount": 800000,
+        "balance": 1600000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-8",
+        "amount": null,
+        "balance": 1600000
+      },
+      "expected": "Lỗi dữ liệu",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    }
+  ],
+  "reminderRules": [
+    {
+      "id": "DEMO-RULE-01",
+      "name": "Nhắc nợ quá hạn mẫu",
+      "status": "Đang kích hoạt",
+      "daysPastDue": 1,
+      "minDebt": 1,
+      "daysWithoutNewOrder": 0,
+      "channel": "Zalo",
+      "scanTime": "09:00",
+      "validFrom": "2026-10-01",
+      "validTo": "2026-12-31",
+      "template": "Kính gửi {Ten_KH}, số còn phải trả {So_Tien_No}, quá hạn {So_Ngay_Qua_Han} ngày",
+      "origin": "Kịch bản được nạp sẵn là cấu hình demo, tạo mới form không tự điền số"
+    }
+  ],
+  "configuration": {
+    "earlyWarningDays": null,
+    "agingBuckets": null,
+    "severityThresholds": null,
+    "paymentUrl": null,
+    "reportItemAllocation": "Chỉ lấy hóa đơn có dòng hàng và giảm nợ phân bổ theo dòng đã được cung cấp, thiếu thì Chưa đủ căn cứ",
+    "prototypeGateway": "Mô phỏng, không có kết nối Zalo/SMS/Email thật",
+    "closePeriod": "Chỉ mô phỏng kiểm tra, không khẳng định tiêu chí pháp lý",
+    "supportedReminderVariables": [
+      "Ten_KH",
+      "So_Tien_No",
+      "So_Ngay_Qua_Han",
+      "Link_Thanh_Toan"
+    ]
+  },
+  "testScenarios": [
+    {
+      "id": "E2E-01",
+      "reset": true,
+      "steps": [
+        "Ghi nhận CTDC-001",
+        "Ghi nhận DEMO-GBC-GIAMHET, chỉ định HD-GOC-001",
+        "Mở lại thông báo, danh sách chờ, báo cáo"
+      ],
+      "expected": {
+        "customer": "KH-007",
+        "balances": [
+          7000000,
+          9000000,
+          0
+        ],
+        "invoiceOutstanding": 0,
+        "newIncreaseJournals": 1,
+        "newReductionJournals": 1,
+        "pendingReminderForInvoice": false
+      }
+    },
+    {
+      "id": "UC01-NO-DUP",
+      "reset": true,
+      "steps": [
+        "Tiếp nhận CTBH-006",
+        "Nhấn ghi nhận lần nữa"
+      ],
+      "expected": {
+        "customer": "KH-008",
+        "balance": 5000000,
+        "newJournals": 0,
+        "newIntakes": 1
+      }
+    },
+    {
+      "id": "UC01-PREPAID",
+      "reset": true,
+      "steps": [
+        "Tiếp nhận CTBH-005"
+      ],
+      "expected": {
+        "customer": "KH-005",
+        "balance": 7000000,
+        "newAllocationCount": 0
+      }
+    },
+    {
+      "id": "UC02-PARTIAL",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-PT-A1 theo hạn sớm nhất"
+      ],
+      "expected": {
+        "customer": "DEMO-KH-A",
+        "balance": 2240000,
+        "outstandingA1": 1160000,
+        "outstandingA2": 1080000,
+        "unallocated": 0
+      }
+    },
+    {
+      "id": "UC02-OVERPAY",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-GBC-A2"
+      ],
+      "expected": {
+        "customer": "DEMO-KH-A",
+        "balance": -760000,
+        "invoiceOutstanding": 0,
+        "unallocated": 760000
+      }
+    },
+    {
+      "id": "UC02-ADVANCE-THEN-INVOICE",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-PT-TRUOC khi HD-001 chưa được UC01 tiếp nhận",
+        "Tiếp nhận CTBH-001",
+        "Vào Cần phân bổ, phân bổ 1500000 vào HD-001"
+      ],
+      "expected": {
+        "customer": "KH-001",
+        "balances": [
+          -1500000,
+          8500000,
+          8500000
+        ],
+        "invoiceOutstanding": 8500000,
+        "unallocated": 0,
+        "totalNewJournals": 2,
+        "newJournalAtAllocation": 0
+      }
+    },
+    {
+      "id": "UC02-RETURN-DISCOUNT",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-PTH-B1",
+        "Ghi DEMO-BBGG-B1",
+        "Ghi DEMO-BBSS-B1"
+      ],
+      "expected": {
+        "customer": "DEMO-KH-B",
+        "balances": [
+          864000,
+          756000,
+          648000
+        ],
+        "unallocated": 0
+      }
+    },
+    {
+      "id": "UC02-UNALLOCATED",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-GBC-KHONGPB ở Chỉ ghi giảm"
+      ],
+      "expected": {
+        "customer": "DEMO-KH-B",
+        "balance": 980000,
+        "invoiceOutstanding": 1080000,
+        "unallocated": 100000
+      }
+    },
+    {
+      "id": "UC03-IMMUTABLE",
+      "reset": true,
+      "steps": [
+        "Ghi nhận phản hồi không đồng ý",
+        "Chuyển yêu cầu Bán hàng",
+        "Ghi kết quả xác minh",
+        "Đối chiếu lại"
+      ],
+      "expected": {
+        "arChanges": 0,
+        "noAutoMatch": true
+      }
+    },
+    {
+      "id": "UC04-REVALIDATE",
+      "reset": true,
+      "steps": [
+        "Xem trước thông báo HD-GOC-001",
+        "Ghi DEMO-GBC-CHIDINH tại UC02",
+        "Trở lại bản xem trước và xuất"
+      ],
+      "expected": {
+        "customer": "KH-007",
+        "oldBalance": 7000000,
+        "currentBalance": 6000000,
+        "blockOldExport": true
+      }
+    },
+    {
+      "id": "UC04-REMINDER-SETTLED",
+      "reset": true,
+      "steps": [
+        "Tiếp nhận CTDC-001",
+        "Tạo hàng đợi mô phỏng cho HD-GOC-001",
+        "Ghi DEMO-GBC-GIAMHET",
+        "Duyệt gửi hàng đợi"
+      ],
+      "expected": {
+        "messagesSentForSettled": 0,
+        "balance": 0
+      }
+    }
+  ],
+  "sourceInventory": [
+    {
+      "file": "01-c-t-UC.docx",
+      "sha256": "3e81b452bd3508a6e5abd4080e2a860b4bbcba830d95c91a1d74074f251cab12"
+    },
+    {
+      "file": "02-M-n-h-nh-tr-ng-d-li-u-v-h-nh-vi.xlsx",
+      "sha256": "954a016ada85bd789d1227cfedda9af4b0e2cc236a671e37e8f23c8c685974e2"
+    },
+    {
+      "file": "Mockup_Data_UC02_Ghi_nhan_giam_cong_no (1).xlsx",
+      "sha256": "0e59ed3909cfbda91b1611a07d743ab8619234a52e7bea4b5f301ef98f6e2662"
+    }
+  ],
+  "initialJournals": [
+    {
+      "id": "BT-006",
+      "sourceId": "CTBH-006",
+      "customerId": "KH-008",
+      "gross": 5000000,
+      "alreadyInBalance": true,
+      "lines": null,
+      "origin": "Nguồn chỉ có mã và giá trị, không tự dựng dòng định khoản lịch sử chưa được cung cấp"
+    }
+  ],
+  "orders": [
+    {
+      "id": "DH-001",
+      "customerId": "KH-001",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-001"
+    },
+    {
+      "id": "DH-002",
+      "customerId": "KH-002",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-002"
+    },
+    {
+      "id": "DH-005",
+      "customerId": "KH-005",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-005"
+    },
+    {
+      "id": "DEMO-DH-VC-001",
+      "customerId": "KH-006",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-006"
+    },
+    {
+      "id": "DH-008",
+      "customerId": "KH-008",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-008"
+    },
+    {
+      "id": "DEMO-DH-A1",
+      "customerId": "DEMO-KH-A",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách DEMO-KH-A"
+    },
+    {
+      "id": "DEMO-DH-B1",
+      "customerId": "DEMO-KH-B",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách DEMO-KH-B"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "HDONG-001",
+      "customerId": "KH-003",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-003"
+    },
+    {
+      "id": "HDONG-002",
+      "customerId": "KH-004",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-004"
+    },
+    {
+      "id": "DEMO-HOPDONG-A",
+      "customerId": "DEMO-KH-A",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách DEMO-KH-A"
+    }
+  ]
+}

@@ -1,0 +1,2985 @@
+{
+  "meta": {
+    "version": "0.1-review",
+    "date": "2026-10-15",
+    "currency": "VND",
+    "demoClock": "2026-10-15",
+    "warning": "TẤT CẢ LÀ MOCK, các bổ sung DEMO và quy tắc ghép bộ cần nhóm rà, không phải dữ liệu hay phương pháp thuế thực tế HTX",
+    "sourceFacts": "Giữ mã và số dư UC01 theo tab Du_lieu_dung_chung",
+    "legacyPolicy": "Bộ Ly giữ nguyên trong hồ sơ đối chiếu, không nạp phân bón hoặc 5% vào bộ tương ớt mặc định",
+    "startup": "Nạp initialState đúng một lần, khôi phục localStorage nếu cùng schemaVersion, không nạp kết quả kỳ vọng vào số dư ban đầu",
+    "paymentTermNote": "Hạn thanh toán và ngưỡng tuổi nợ 30/60/90 là dữ liệu mẫu để báo cáo chạy được, không phải quy định chính thức của HTX"
+  },
+  "customers": [
+    {
+      "id": "KH-001",
+      "name": "Khách hàng A",
+      "openingBalance": 0,
+      "creditLimit": 30000000,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 6",
+      "phone": "0901000001",
+      "address": "Ấp mẫu 1, xã Hoa Lợi",
+      "taxCode": "0310000001"
+    },
+    {
+      "id": "KH-002",
+      "name": "Khách hàng B",
+      "openingBalance": 5000000,
+      "creditLimit": 30000000,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 7",
+      "phone": "0901000002",
+      "address": "Ấp mẫu 2, xã Hoa Lợi",
+      "taxCode": "0310000002"
+    },
+    {
+      "id": "KH-003",
+      "name": "Khách hàng C",
+      "openingBalance": 0,
+      "creditLimit": 30000000,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 8",
+      "phone": "0901000003",
+      "address": "Ấp mẫu 3, xã Hoa Lợi",
+      "taxCode": "0310000003"
+    },
+    {
+      "id": "KH-004",
+      "name": "Khách hàng D",
+      "openingBalance": 5000000,
+      "creditLimit": 10000000,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 9",
+      "phone": "0901000004",
+      "address": "Ấp mẫu 4, xã Hoa Lợi",
+      "taxCode": "0310000004"
+    },
+    {
+      "id": "KH-005",
+      "name": "Khách hàng E",
+      "openingBalance": 0,
+      "creditLimit": 30000000,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 10",
+      "phone": "0901000005",
+      "address": "Ấp mẫu 5, xã Hoa Lợi",
+      "taxCode": "0310000005"
+    },
+    {
+      "id": "KH-006",
+      "name": "Khách hàng F",
+      "openingBalance": 2000000,
+      "creditLimit": null,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 11",
+      "phone": "0901000006",
+      "address": "Ấp mẫu 6, xã Hoa Lợi",
+      "taxCode": "0310000006"
+    },
+    {
+      "id": "KH-007",
+      "name": "Khách hàng G",
+      "openingBalance": 7000000,
+      "creditLimit": 30000000,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 12",
+      "phone": "0901000007",
+      "address": "Ấp mẫu 7, xã Hoa Lợi",
+      "taxCode": "0310000007"
+    },
+    {
+      "id": "KH-008",
+      "name": "Khách hàng H",
+      "openingBalance": 5000000,
+      "creditLimit": 30000000,
+      "group": "Nhóm mẫu UC01",
+      "origin": "Nguồn: Du_lieu_dung_chung dòng 13",
+      "phone": "0901000008",
+      "address": "Ấp mẫu 8, xã Hoa Lợi",
+      "taxCode": "0310000008"
+    },
+    {
+      "id": "DEMO-KH-A",
+      "name": "Đại lý Tương ớt An Bình",
+      "openingBalance": 3240000,
+      "creditLimit": null,
+      "group": "Khách hàng demo liên thông",
+      "origin": "Đề xuất mock bổ sung, không thay khách của Ly",
+      "phone": "0902000001",
+      "address": "Đại lý minh họa An Bình",
+      "taxCode": "0310000101"
+    },
+    {
+      "id": "DEMO-KH-B",
+      "name": "Cửa hàng Tương ớt Bình Minh",
+      "openingBalance": 1080000,
+      "creditLimit": null,
+      "group": "Khách hàng demo liên thông",
+      "origin": "Đề xuất mock bổ sung",
+      "phone": "0902000002",
+      "address": "Cửa hàng minh họa Bình Minh",
+      "taxCode": "0310000102"
+    },
+    {
+      "id": "DEMO-KH-C",
+      "name": "Đại lý mẫu chưa có hạn",
+      "openingBalance": 1080000,
+      "creditLimit": null,
+      "group": "Khách hàng demo liên thông",
+      "origin": "Ví dụ khoản phải thu đã ghi nhận nhưng nguồn chưa chốt hạn thanh toán",
+      "phone": "0902000003",
+      "address": "Điểm bán minh họa chưa có điều khoản",
+      "taxCode": "0310000103"
+    },
+    {
+      "id": "DEMO-KH-D",
+      "name": "Khách hàng mẫu điều khoản",
+      "openingBalance": 0,
+      "creditLimit": null,
+      "group": "Nhóm mẫu điều khoản",
+      "origin": "Ví dụ các tình huống hạn thanh toán chưa xác định được, chưa phát sinh số dư",
+      "phone": "0902000004",
+      "address": "Điểm bán minh họa điều khoản",
+      "taxCode": "0310000104"
+    }
+  ],
+  "items": [
+    {
+      "id": "MH-MK250",
+      "name": "Tương ớt Mường Khương 250ml",
+      "unit": "Chai"
+    },
+    {
+      "id": "MH-MK500",
+      "name": "Tương ớt Mường Khương 500ml",
+      "unit": "Chai"
+    }
+  ],
+  "uc01Sources": [
+    {
+      "id": "CTBH-001",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-001",
+      "invoiceId": "HD-001",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 10000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 10000000,
+      "orderId": "DH-001",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 10000000,
+      "origin": "Nguồn bảng chung dòng 40",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-001",
+      "netIncrease": 9259259,
+      "taxIncrease": 740741,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 10000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 9259259
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 740741
+        }
+      ],
+      "balanceIncrement": 10000000,
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "CTBH-002",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-002",
+      "invoiceId": "HD-002",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 6000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 6000000,
+      "orderId": "DH-002",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 11000000,
+      "origin": "Nguồn bảng chung dòng 41",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-002",
+      "netIncrease": 5555556,
+      "taxIncrease": 444444,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 6000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 5555556
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 444444
+        }
+      ],
+      "balanceIncrement": 6000000,
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "CTBH-003",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-003",
+      "invoiceId": "HD-003",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 8000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 8000000,
+      "orderId": null,
+      "contractId": "HDONG-001",
+      "deliveryBatch": "Đợt 1",
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 8000000,
+      "origin": "Nguồn bảng chung dòng 42",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-003",
+      "netIncrease": 7407407,
+      "taxIncrease": 592593,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 8000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 7407407
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 592593
+        }
+      ],
+      "balanceIncrement": 8000000,
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "CTBH-004",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-004",
+      "invoiceId": "HD-004",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 6000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 6000000,
+      "orderId": null,
+      "contractId": "HDONG-002",
+      "deliveryBatch": "Đợt 2",
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 11000000,
+      "origin": "Nguồn bảng chung dòng 43",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-004",
+      "netIncrease": 5555556,
+      "taxIncrease": 444444,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 6000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 5555556
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 444444
+        }
+      ],
+      "balanceIncrement": 6000000,
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "CTBH-005",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-005",
+      "invoiceId": "HD-005",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 10000000,
+      "allocatedBeforeIntake": 3000000,
+      "outstandingAfter": 7000000,
+      "orderId": "DH-005",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 7000000,
+      "origin": "Nguồn bảng chung dòng 44",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-005",
+      "netIncrease": 9259259,
+      "taxIncrease": 740741,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 10000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 9259259
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 740741
+        }
+      ],
+      "balanceIncrement": 7000000,
+      "legacyAllocationNote": "PB-005 được mang theo trong bộ nền UC01, không tạo thêm bút toán hoặc phân bổ tại UC01, số dư trước bằng 0 theo nguồn, cần nhóm rà mô hình thời điểm phản ánh ứng trước",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "CTDV-001",
+      "type": "Chứng từ bán hàng dịch vụ",
+      "customerId": "KH-006",
+      "invoiceId": "VC-001",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 1000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 1000000,
+      "orderId": "DEMO-DH-VC-001",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 3000000,
+      "origin": "Nguồn bảng chung dòng 45",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTDV-001",
+      "netIncrease": 925926,
+      "taxIncrease": 74074,
+      "taxRate": 0.08,
+      "amountDetailOrigin": "Đề xuất chia trước thuế/thuế để dựng bút toán demo, chưa nhóm duyệt",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 1000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 925926
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 74074
+        }
+      ],
+      "balanceIncrement": 1000000,
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "CTDC-001",
+      "type": "Chứng từ điều chỉnh tăng công nợ",
+      "customerId": "KH-007",
+      "invoiceId": "DC-001",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 2000000,
+      "allocatedBeforeIntake": 3000000,
+      "outstandingAfter": 9000000,
+      "orderId": null,
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 9000000,
+      "origin": "Nguồn bảng chung dòng 46",
+      "version": 1,
+      "valid": true,
+      "originalSourceId": "CTBH-GOC-001",
+      "originalInvoiceId": "HD-GOC-001",
+      "receivableId": "CN-001",
+      "agreementId": "BB-MOCK-001",
+      "netIncrease": 1851852,
+      "taxIncrease": 148148,
+      "reason": "Hóa đơn gốc ghi thiếu giá bán",
+      "taxRate": 0.08,
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 2000000
+        },
+        {
+          "side": "Có",
+          "account": "5112",
+          "amount": 1851852
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 148148
+        }
+      ],
+      "balanceIncrement": 2000000,
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 42 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 42 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-01",
+        "days": 42,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "CTBH-006",
+      "type": "Chứng từ bán hàng",
+      "customerId": "KH-008",
+      "invoiceId": "HD-006",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 5000000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 5000000,
+      "orderId": "DH-008",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Đã hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": true,
+      "existingJournalId": "BT-006",
+      "expectedCustomerBalance": 5000000,
+      "origin": "Nguồn bảng chung dòng 47",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CTBH-006",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 5000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 4629630
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 370370
+        }
+      ],
+      "balanceIncrement": 0,
+      "taxRate": 0.08,
+      "netIncrease": 4629630,
+      "taxIncrease": 370370,
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-CTBH-LECH",
+      "type": "Chứng từ bán hàng",
+      "customerId": "DEMO-KH-D",
+      "invoiceId": "DEMO-HD-LECH",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 540000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 540000,
+      "orderId": "DEMO-DH-LECH",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 540000,
+      "origin": "Ví dụ tình huống hạn thanh toán, chưa ghi vào số dư",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-LECH",
+      "netIncrease": 500000,
+      "taxIncrease": 40000,
+      "taxRate": 0.08,
+      "creator": "Nhân viên bán hàng",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 540000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 500000
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 40000
+        }
+      ],
+      "balanceIncrement": 540000
+    },
+    {
+      "id": "DEMO-CTBH-CHUADUYET",
+      "type": "Chứng từ bán hàng",
+      "customerId": "DEMO-KH-D",
+      "invoiceId": "DEMO-HD-CHUADUYET",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 540000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 540000,
+      "orderId": "DEMO-DH-CHUADUYET",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 540000,
+      "origin": "Ví dụ tình huống hạn thanh toán, chưa ghi vào số dư",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-CHUADUYET",
+      "netIncrease": 500000,
+      "taxIncrease": 40000,
+      "taxRate": 0.08,
+      "creator": "Nhân viên bán hàng",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 540000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 500000
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 40000
+        }
+      ],
+      "balanceIncrement": 540000
+    },
+    {
+      "id": "DEMO-CTBH-VANBAN",
+      "type": "Chứng từ bán hàng",
+      "customerId": "DEMO-KH-D",
+      "invoiceId": "DEMO-HD-VANBAN",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 540000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 540000,
+      "orderId": "DEMO-DH-VANBAN",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 540000,
+      "origin": "Ví dụ tình huống hạn thanh toán, chưa ghi vào số dư",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-VANBAN",
+      "netIncrease": 500000,
+      "taxIncrease": 40000,
+      "taxRate": 0.08,
+      "creator": "Nhân viên bán hàng",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 540000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 500000
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 40000
+        }
+      ],
+      "balanceIncrement": 540000
+    },
+    {
+      "id": "DEMO-CTBH-KHONGHAN",
+      "type": "Chứng từ bán hàng",
+      "customerId": "DEMO-KH-D",
+      "invoiceId": "DEMO-HD-KHONGHAN",
+      "issuedAt": "2026-10-13",
+      "grossIncrease": 540000,
+      "allocatedBeforeIntake": 0,
+      "outstandingAfter": 540000,
+      "orderId": "DEMO-DH-KHONGHAN",
+      "contractId": null,
+      "deliveryBatch": null,
+      "journalStatus": "Chưa hạch toán",
+      "intakeStatus": "Chưa tiếp nhận UC01",
+      "alreadyInBalance": false,
+      "existingJournalId": null,
+      "expectedCustomerBalance": 540000,
+      "origin": "Ví dụ tình huống hạn thanh toán, chưa ghi vào số dư",
+      "version": 1,
+      "valid": true,
+      "deliveryDocumentId": "DEMO-PGH-KHONGHAN",
+      "netIncrease": 500000,
+      "taxIncrease": 40000,
+      "taxRate": 0.08,
+      "creator": "Nhân viên bán hàng",
+      "journalProposal": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 540000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 500000
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 40000
+        }
+      ],
+      "balanceIncrement": 540000
+    }
+  ],
+  "invoices": [
+    {
+      "id": "DEMO-HD-CU-002",
+      "customerId": "KH-002",
+      "gross": 5000000,
+      "issuedAt": "2026-08-01",
+      "dueAt": "2026-08-31",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 4629630,
+      "tax": 370370,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK250",
+          "quantity": 1,
+          "unitPrice": 4629630,
+          "net": 4629630,
+          "tax": 370370,
+          "gross": 5000000
+        }
+      ],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000002",
+      "orderId": "DH-CU-002",
+      "sourceId": "CTBH-CU-002"
+    },
+    {
+      "id": "DEMO-HD-CU-004",
+      "customerId": "KH-004",
+      "gross": 5000000,
+      "issuedAt": "2026-07-01",
+      "dueAt": "2026-07-31",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 4629630,
+      "tax": 370370,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK250",
+          "quantity": 1,
+          "unitPrice": 4629630,
+          "net": 4629630,
+          "tax": 370370,
+          "gross": 5000000
+        }
+      ],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000004",
+      "contractId": "HDONG-CU-004",
+      "sourceId": "CTBH-CU-004"
+    },
+    {
+      "id": "DEMO-HD-CU-006",
+      "customerId": "KH-006",
+      "gross": 2000000,
+      "issuedAt": "2026-05-16",
+      "dueAt": "2026-06-15",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 1851852,
+      "tax": 148148,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK500",
+          "quantity": 1,
+          "unitPrice": 1851852,
+          "net": 1851852,
+          "tax": 148148,
+          "gross": 2000000
+        }
+      ],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000006",
+      "orderId": "DH-CU-006",
+      "sourceId": "CTBH-CU-006"
+    },
+    {
+      "id": "HD-GOC-001",
+      "customerId": "KH-007",
+      "gross": 10000000,
+      "issuedAt": "2026-10-01",
+      "dueAt": "2026-11-12",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 9259259,
+      "tax": 740741,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK500",
+          "quantity": 1,
+          "unitPrice": 9259259,
+          "net": 9259259,
+          "tax": 740741,
+          "gross": 10000000
+        }
+      ],
+      "origin": "Nguồn mock UC01 DC-001",
+      "number": "00000015",
+      "series": "C26TAA",
+      "form": "1",
+      "orderId": "DH-GOC-001",
+      "sourceId": "CTBH-GOC-001"
+    },
+    {
+      "id": "HD-006",
+      "customerId": "KH-008",
+      "gross": 5000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 4629630,
+      "tax": 370370,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK250",
+          "quantity": 1,
+          "unitPrice": 4629630,
+          "net": 4629630,
+          "tax": 370370,
+          "gross": 5000000
+        }
+      ],
+      "origin": "Nguồn mock UC01, đã phản ánh số dư",
+      "sourceId": "CTBH-006",
+      "orderId": "DH-008",
+      "contractId": null,
+      "deliveryBatch": null,
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000047"
+    },
+    {
+      "id": "HD-001",
+      "customerId": "KH-001",
+      "gross": 10000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 9259259,
+      "tax": 740741,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-001",
+      "orderId": "DH-001",
+      "contractId": null,
+      "deliveryBatch": null,
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000040"
+    },
+    {
+      "id": "HD-002",
+      "customerId": "KH-002",
+      "gross": 6000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 5555556,
+      "tax": 444444,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-002",
+      "orderId": "DH-002",
+      "contractId": null,
+      "deliveryBatch": null,
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000041"
+    },
+    {
+      "id": "HD-003",
+      "customerId": "KH-003",
+      "gross": 8000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 7407407,
+      "tax": 592593,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-003",
+      "orderId": null,
+      "contractId": "HDONG-001",
+      "deliveryBatch": "Đợt 1",
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000042"
+    },
+    {
+      "id": "HD-004",
+      "customerId": "KH-004",
+      "gross": 6000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 5555556,
+      "tax": 444444,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-004",
+      "orderId": null,
+      "contractId": "HDONG-002",
+      "deliveryBatch": "Đợt 2",
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000043"
+    },
+    {
+      "id": "HD-005",
+      "customerId": "KH-005",
+      "gross": 10000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 9259259,
+      "tax": 740741,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTBH-005",
+      "orderId": "DH-005",
+      "contractId": null,
+      "deliveryBatch": null,
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000044"
+    },
+    {
+      "id": "VC-001",
+      "customerId": "KH-006",
+      "gross": 1000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 925926,
+      "tax": 74074,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "sourceId": "CTDV-001",
+      "orderId": "DEMO-DH-VC-001",
+      "contractId": null,
+      "deliveryBatch": null,
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000045"
+    },
+    {
+      "id": "DC-001",
+      "customerId": "KH-007",
+      "gross": 2000000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending_adjustment",
+      "currency": "VND",
+      "net": 1851852,
+      "tax": 148148,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Nguồn DC-001, chỉ chứa phần tăng",
+      "number": "00000031",
+      "series": "C26TAA",
+      "form": "1",
+      "originalInvoiceId": "HD-GOC-001",
+      "sourceId": "CTDC-001"
+    },
+    {
+      "id": "DEMO-HD-A1",
+      "customerId": "DEMO-KH-A",
+      "gross": 2160000,
+      "issuedAt": "2026-09-20",
+      "dueAt": "2026-10-01",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 2000000,
+      "tax": 160000,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK250",
+          "quantity": 50,
+          "unitPrice": 40000,
+          "net": 2000000,
+          "tax": 160000,
+          "gross": 2160000
+        }
+      ],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "orderId": "DEMO-DH-A1",
+      "contractId": null,
+      "deliveryBatch": null,
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000021",
+      "sourceId": "CTBH-A1"
+    },
+    {
+      "id": "DEMO-HD-A2",
+      "customerId": "DEMO-KH-A",
+      "gross": 1080000,
+      "issuedAt": "2026-09-20",
+      "dueAt": "2026-10-15",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 1000000,
+      "tax": 80000,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK500",
+          "quantity": 20,
+          "unitPrice": 50000,
+          "net": 1000000,
+          "tax": 80000,
+          "gross": 1080000
+        }
+      ],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "orderId": null,
+      "contractId": "DEMO-HOPDONG-A",
+      "deliveryBatch": "Đợt 1",
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000022",
+      "sourceId": "CTBH-A2"
+    },
+    {
+      "id": "DEMO-HD-B1",
+      "customerId": "DEMO-KH-B",
+      "gross": 1080000,
+      "issuedAt": "2026-09-20",
+      "dueAt": "2026-10-20",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 1000000,
+      "tax": 80000,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK500",
+          "quantity": 20,
+          "unitPrice": 50000,
+          "net": 1000000,
+          "tax": 80000,
+          "gross": 1080000
+        }
+      ],
+      "origin": "Đề xuất hồ sơ mock bổ sung",
+      "orderId": "DEMO-DH-B1",
+      "contractId": null,
+      "deliveryBatch": null,
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000023",
+      "sourceId": "CTBH-B1"
+    },
+    {
+      "id": "DEMO-HD-CHUA-HAN",
+      "customerId": "DEMO-KH-C",
+      "gross": 1080000,
+      "issuedAt": "2026-10-01",
+      "dueAt": "2026-10-31",
+      "arStatus": "recognized",
+      "currency": "VND",
+      "net": 1000000,
+      "tax": 80000,
+      "taxRate": 0.08,
+      "lines": [
+        {
+          "itemId": "MH-MK250",
+          "quantity": 25,
+          "unitPrice": 40000,
+          "net": 1000000,
+          "tax": 80000,
+          "gross": 1080000
+        }
+      ],
+      "origin": "Ví dụ hóa đơn đã ghi nhận công nợ nhưng chưa có hạn thanh toán",
+      "number": "00000050",
+      "series": "C26TAA",
+      "form": "1",
+      "sourceId": "CTBH-CHUA-HAN",
+      "orderId": "DEMO-DH-CHUA-HAN",
+      "contractId": null,
+      "deliveryBatch": null
+    },
+    {
+      "id": "DEMO-HD-LECH",
+      "customerId": "DEMO-KH-D",
+      "gross": 540000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 500000,
+      "tax": 40000,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Ví dụ chứng từ chờ ghi tăng, dùng để xem từng trạng thái xác định hạn",
+      "number": "00000051",
+      "series": "C26TAA",
+      "form": "1",
+      "sourceId": "DEMO-CTBH-LECH",
+      "orderId": "DEMO-DH-LECH",
+      "contractId": null,
+      "deliveryBatch": null
+    },
+    {
+      "id": "DEMO-HD-CHUADUYET",
+      "customerId": "DEMO-KH-D",
+      "gross": 540000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 500000,
+      "tax": 40000,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Ví dụ chứng từ chờ ghi tăng, dùng để xem từng trạng thái xác định hạn",
+      "number": "00000052",
+      "series": "C26TAA",
+      "form": "1",
+      "sourceId": "DEMO-CTBH-CHUADUYET",
+      "orderId": "DEMO-DH-CHUADUYET",
+      "contractId": null,
+      "deliveryBatch": null
+    },
+    {
+      "id": "DEMO-HD-VANBAN",
+      "customerId": "DEMO-KH-D",
+      "gross": 540000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 500000,
+      "tax": 40000,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Ví dụ chứng từ chờ ghi tăng, dùng để xem từng trạng thái xác định hạn",
+      "number": "00000053",
+      "series": "C26TAA",
+      "form": "1",
+      "sourceId": "DEMO-CTBH-VANBAN",
+      "orderId": "DEMO-DH-VANBAN",
+      "contractId": null,
+      "deliveryBatch": null
+    },
+    {
+      "id": "DEMO-HD-KHONGHAN",
+      "customerId": "DEMO-KH-D",
+      "gross": 540000,
+      "issuedAt": "2026-10-13",
+      "dueAt": "2026-11-12",
+      "arStatus": "pending",
+      "currency": "VND",
+      "net": 500000,
+      "tax": 40000,
+      "taxRate": 0.08,
+      "lines": [],
+      "origin": "Ví dụ chứng từ chờ ghi tăng, dùng để xem từng trạng thái xác định hạn",
+      "number": "00000054",
+      "series": "C26TAA",
+      "form": "1",
+      "sourceId": "DEMO-CTBH-KHONGHAN",
+      "orderId": "DEMO-DH-KHONGHAN",
+      "contractId": null,
+      "deliveryBatch": null
+    }
+  ],
+  "initialReceivables": [
+    {
+      "id": "DEMO-CN-CU-002",
+      "invoiceId": "DEMO-HD-CU-002",
+      "customerId": "KH-002",
+      "gross": 5000000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 5000000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "DEMO-CN-CU-004",
+      "invoiceId": "DEMO-HD-CU-004",
+      "customerId": "KH-004",
+      "gross": 5000000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 5000000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "DEMO-CN-CU-006",
+      "invoiceId": "DEMO-HD-CU-006",
+      "customerId": "KH-006",
+      "gross": 2000000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 2000000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "CN-001",
+      "invoiceId": "HD-GOC-001",
+      "customerId": "KH-007",
+      "gross": 10000000,
+      "historicalAllocatedCredits": 3000000,
+      "openingOutstanding": 7000000,
+      "status": "recognized",
+      "origin": "Nguồn mock UC01, 10 triệu trừ 3 triệu",
+      "sourceId": "CTBH-GOC-001",
+      "historicalAllocationId": "PB-GOC-001"
+    },
+    {
+      "id": "DEMO-CN-006",
+      "invoiceId": "HD-006",
+      "customerId": "KH-008",
+      "gross": 5000000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 5000000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu",
+      "sourceId": "CTBH-006"
+    },
+    {
+      "id": "DEMO-CN-DEMO-HD-A1",
+      "invoiceId": "DEMO-HD-A1",
+      "customerId": "DEMO-KH-A",
+      "gross": 2160000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 2160000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "DEMO-CN-DEMO-HD-A2",
+      "invoiceId": "DEMO-HD-A2",
+      "customerId": "DEMO-KH-A",
+      "gross": 1080000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 1080000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "DEMO-CN-DEMO-HD-B1",
+      "invoiceId": "DEMO-HD-B1",
+      "customerId": "DEMO-KH-B",
+      "gross": 1080000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 1080000,
+      "status": "recognized",
+      "origin": "Đề xuất phân rã số dư nền thành khoản phải thu"
+    },
+    {
+      "id": "DEMO-CN-CHUA-HAN",
+      "invoiceId": "DEMO-HD-CHUA-HAN",
+      "customerId": "DEMO-KH-C",
+      "gross": 1080000,
+      "historicalAllocatedCredits": 0,
+      "openingOutstanding": 1080000,
+      "status": "recognized",
+      "origin": "Khoản phải thu minh họa chưa có hạn thanh toán",
+      "sourceId": "CTBH-CHUA-HAN"
+    }
+  ],
+  "sourceDocuments": [
+    {
+      "id": "DH-001",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-001",
+      "sourceId": "CTBH-001",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-001",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-PGH-CTBH-001",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-001",
+      "sourceId": "CTBH-001",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-001",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DH-002",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-002",
+      "sourceId": "CTBH-002",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-002",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-PGH-CTBH-002",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-002",
+      "sourceId": "CTBH-002",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-002",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "HDONG-001",
+      "type": "Hợp đồng",
+      "customerId": "KH-003",
+      "sourceId": "CTBH-003",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-003",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-PGH-CTBH-003",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-003",
+      "sourceId": "CTBH-003",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-003",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "HDONG-002",
+      "type": "Hợp đồng",
+      "customerId": "KH-004",
+      "sourceId": "CTBH-004",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-004",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-PGH-CTBH-004",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-004",
+      "sourceId": "CTBH-004",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-004",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DH-005",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-005",
+      "sourceId": "CTBH-005",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-005",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-PGH-CTBH-005",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-005",
+      "sourceId": "CTBH-005",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-005",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DEMO-DH-VC-001",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-006",
+      "sourceId": "CTDV-001",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTDV-001",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-PGH-CTDV-001",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-006",
+      "sourceId": "CTDV-001",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTDV-001",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DH-008",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-008",
+      "sourceId": "CTBH-006",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-006",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-PGH-CTBH-006",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-008",
+      "sourceId": "CTBH-006",
+      "content": "Hồ sơ minh họa liên kết đúng khách hàng và chứng từ CTBH-006",
+      "origin": "Mã gốc nếu có trong bảng, nội dung chi tiết là đề xuất mock bổ sung",
+      "issuedAt": "2026-10-13",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "BB-MOCK-001",
+      "type": "Văn bản thỏa thuận về sai sót hóa đơn",
+      "customerId": "KH-007",
+      "sourceId": "CTDC-001",
+      "issuedAt": "2026-10-12",
+      "content": "DỮ LIỆU GIẢ LẬP PHỤC VỤ HỌC TẬP, HTX Hoa Lợi và Khách hàng G thống nhất điều chỉnh hóa đơn 00000015 ngày 01/10/2026, tăng trước thuế 1.851.852 VND, thuế 148.148 VND, tổng tăng 2.000.000 VND",
+      "origin": "Nội dung mock trong bảng chung, không dựng chữ ký hoặc con dấu",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-HDDC-DEMO-PTH-B1",
+      "type": "Hóa đơn điều chỉnh giảm",
+      "customerId": "DEMO-KH-B",
+      "originalInvoiceId": "DEMO-HD-B1",
+      "net": 200000,
+      "tax": 16000,
+      "gross": 216000,
+      "origin": "Đề xuất mock, chỉ tiếp nhận khi nguồn đã duyệt",
+      "issuedAt": "2026-09-20",
+      "creator": "Nhân viên bán hàng",
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000061"
+    },
+    {
+      "id": "DEMO-HDDC-DEMO-BBGG-B1",
+      "type": "Hóa đơn điều chỉnh giảm",
+      "customerId": "DEMO-KH-B",
+      "originalInvoiceId": "DEMO-HD-B1",
+      "net": 100000,
+      "tax": 8000,
+      "gross": 108000,
+      "origin": "Đề xuất mock, chỉ tiếp nhận khi nguồn đã duyệt",
+      "issuedAt": "2026-09-20",
+      "creator": "Nhân viên bán hàng",
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000062"
+    },
+    {
+      "id": "DEMO-HDDC-DEMO-BBSS-B1",
+      "type": "Hóa đơn điều chỉnh giảm",
+      "customerId": "DEMO-KH-B",
+      "originalInvoiceId": "DEMO-HD-B1",
+      "net": 100000,
+      "tax": 8000,
+      "gross": 108000,
+      "origin": "Đề xuất mock, chỉ tiếp nhận khi nguồn đã duyệt",
+      "issuedAt": "2026-09-20",
+      "creator": "Nhân viên bán hàng",
+      "form": "1",
+      "series": "C26TAA",
+      "number": "00000063"
+    },
+    {
+      "id": "DEMO-SK-DEMO-GBC-A2",
+      "type": "Sao kê ngân hàng",
+      "sourceId": "DEMO-GBC-A2",
+      "customerId": "DEMO-KH-A",
+      "gross": 4000000,
+      "origin": "Hồ sơ giả lập cho giấy báo Có, không có tài khoản ngân hàng thật",
+      "issuedAt": "2026-10-15",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-SK-DEMO-GBC-CHIDINH",
+      "type": "Sao kê ngân hàng",
+      "sourceId": "DEMO-GBC-CHIDINH",
+      "customerId": "KH-007",
+      "gross": 1000000,
+      "origin": "Hồ sơ giả lập cho giấy báo Có, không có tài khoản ngân hàng thật",
+      "issuedAt": "2026-10-15",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-SK-DEMO-GBC-GIAMHET",
+      "type": "Sao kê ngân hàng",
+      "sourceId": "DEMO-GBC-GIAMHET",
+      "customerId": "KH-007",
+      "gross": 9000000,
+      "origin": "Hồ sơ giả lập cho giấy báo Có, không có tài khoản ngân hàng thật",
+      "issuedAt": "2026-10-15",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-SK-DEMO-GBC-KHONGPB",
+      "type": "Sao kê ngân hàng",
+      "sourceId": "DEMO-GBC-KHONGPB",
+      "customerId": "DEMO-KH-B",
+      "gross": 100000,
+      "origin": "Hồ sơ giả lập cho giấy báo Có, không có tài khoản ngân hàng thật",
+      "issuedAt": "2026-10-15",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DH-CU-002",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-002",
+      "sourceId": "CTBH-CU-002",
+      "issuedAt": "2026-08-01",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-08-01",
+        "days": 30,
+        "dueDate": "2026-08-31"
+      },
+      "content": "Đơn đặt hàng minh họa của CTBH-CU-002",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-PGH-CU-002",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-002",
+      "sourceId": "CTBH-CU-002",
+      "issuedAt": "2026-08-01",
+      "content": "Phiếu giao hàng minh họa của CTBH-CU-002",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "HDONG-CU-004",
+      "type": "Hợp đồng",
+      "customerId": "KH-004",
+      "sourceId": "CTBH-CU-004",
+      "issuedAt": "2026-07-01",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-07-01",
+        "days": 30,
+        "dueDate": "2026-07-31"
+      },
+      "content": "Hợp đồng minh họa của CTBH-CU-004",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-PGH-CU-004",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-004",
+      "sourceId": "CTBH-CU-004",
+      "issuedAt": "2026-07-01",
+      "content": "Phiếu giao hàng minh họa của CTBH-CU-004",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DH-CU-006",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-006",
+      "sourceId": "CTBH-CU-006",
+      "issuedAt": "2026-05-16",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-05-16",
+        "days": 30,
+        "dueDate": "2026-06-15"
+      },
+      "content": "Đơn đặt hàng minh họa của CTBH-CU-006",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-PGH-CU-006",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-006",
+      "sourceId": "CTBH-CU-006",
+      "issuedAt": "2026-05-16",
+      "content": "Phiếu giao hàng minh họa của CTBH-CU-006",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DH-GOC-001",
+      "type": "Đơn đặt hàng",
+      "customerId": "KH-007",
+      "sourceId": "CTBH-GOC-001",
+      "issuedAt": "2026-10-01",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 42 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 42 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-01",
+        "days": 42,
+        "dueDate": "2026-11-12"
+      },
+      "content": "Đơn đặt hàng minh họa của CTBH-GOC-001",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-PGH-GOC-001",
+      "type": "Phiếu giao hàng",
+      "customerId": "KH-007",
+      "sourceId": "CTBH-GOC-001",
+      "issuedAt": "2026-10-01",
+      "content": "Phiếu giao hàng minh họa của CTBH-GOC-001",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DEMO-DH-CHUA-HAN",
+      "type": "Đơn đặt hàng",
+      "customerId": "DEMO-KH-C",
+      "sourceId": "CTBH-CHUA-HAN",
+      "issuedAt": "2026-10-01",
+      "content": "Đơn đặt hàng minh họa của CTBH-CHUA-HAN",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-01",
+        "days": 30,
+        "dueDate": "2026-10-31"
+      }
+    },
+    {
+      "id": "DEMO-PGH-CHUA-HAN",
+      "type": "Phiếu giao hàng",
+      "customerId": "DEMO-KH-C",
+      "sourceId": "CTBH-CHUA-HAN",
+      "issuedAt": "2026-10-01",
+      "content": "Phiếu giao hàng minh họa của CTBH-CHUA-HAN",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DEMO-DH-LECH",
+      "type": "Đơn đặt hàng",
+      "customerId": "DEMO-KH-D",
+      "sourceId": "DEMO-CTBH-LECH",
+      "issuedAt": "2026-10-13",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      },
+      "content": "Đơn đặt hàng minh họa của DEMO-CTBH-LECH",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-PGH-LECH",
+      "type": "Phiếu giao hàng",
+      "customerId": "DEMO-KH-D",
+      "sourceId": "DEMO-CTBH-LECH",
+      "issuedAt": "2026-10-13",
+      "content": "Phiếu giao hàng minh họa của DEMO-CTBH-LECH",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DEMO-DH-CHUADUYET",
+      "type": "Đơn đặt hàng",
+      "customerId": "DEMO-KH-D",
+      "sourceId": "DEMO-CTBH-CHUADUYET",
+      "issuedAt": "2026-10-13",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      },
+      "content": "Đơn đặt hàng minh họa của DEMO-CTBH-CHUADUYET",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-PGH-CHUADUYET",
+      "type": "Phiếu giao hàng",
+      "customerId": "DEMO-KH-D",
+      "sourceId": "DEMO-CTBH-CHUADUYET",
+      "issuedAt": "2026-10-13",
+      "content": "Phiếu giao hàng minh họa của DEMO-CTBH-CHUADUYET",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DEMO-DH-VANBAN",
+      "type": "Đơn đặt hàng",
+      "customerId": "DEMO-KH-D",
+      "sourceId": "DEMO-CTBH-VANBAN",
+      "issuedAt": "2026-10-13",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      },
+      "content": "Đơn đặt hàng minh họa của DEMO-CTBH-VANBAN",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên bán hàng"
+    },
+    {
+      "id": "DEMO-PGH-VANBAN",
+      "type": "Phiếu giao hàng",
+      "customerId": "DEMO-KH-D",
+      "sourceId": "DEMO-CTBH-VANBAN",
+      "issuedAt": "2026-10-13",
+      "content": "Phiếu giao hàng minh họa của DEMO-CTBH-VANBAN",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DEMO-DH-KHONGHAN",
+      "type": "Đơn đặt hàng",
+      "customerId": "DEMO-KH-D",
+      "sourceId": "DEMO-CTBH-KHONGHAN",
+      "issuedAt": "2026-10-13",
+      "content": "Đơn đặt hàng minh họa của DEMO-CTBH-KHONGHAN",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên bán hàng",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-PGH-KHONGHAN",
+      "type": "Phiếu giao hàng",
+      "customerId": "DEMO-KH-D",
+      "sourceId": "DEMO-CTBH-KHONGHAN",
+      "issuedAt": "2026-10-13",
+      "content": "Phiếu giao hàng minh họa của DEMO-CTBH-KHONGHAN",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DEMO-PGH-A1",
+      "type": "Phiếu giao hàng",
+      "customerId": "DEMO-KH-A",
+      "sourceId": "CTBH-A1",
+      "issuedAt": "2026-09-20",
+      "content": "Phiếu giao hàng minh họa của DEMO-HD-A1",
+      "origin": "Hồ sơ giao hàng gắn với hóa đơn đã ghi nhận",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DEMO-PGH-A2",
+      "type": "Phiếu giao hàng",
+      "customerId": "DEMO-KH-A",
+      "sourceId": "CTBH-A2",
+      "issuedAt": "2026-09-20",
+      "content": "Phiếu giao hàng minh họa của DEMO-HD-A2",
+      "origin": "Hồ sơ giao hàng gắn với hóa đơn đã ghi nhận",
+      "creator": "Nhân viên kho"
+    },
+    {
+      "id": "DEMO-PGH-B1",
+      "type": "Phiếu giao hàng",
+      "customerId": "DEMO-KH-B",
+      "sourceId": "CTBH-B1",
+      "issuedAt": "2026-09-20",
+      "content": "Phiếu giao hàng minh họa của DEMO-HD-B1",
+      "origin": "Hồ sơ giao hàng gắn với hóa đơn đã ghi nhận",
+      "creator": "Nhân viên kho"
+    }
+  ],
+  "uc02Sources": [
+    {
+      "id": "DEMO-PT-A1",
+      "type": "Phiếu thu",
+      "customerId": "DEMO-KH-A",
+      "amount": 1000000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Tự động phân bổ",
+      "defaultDebitAccount": "111",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "payer": "Đại lý Tương ớt An Bình",
+      "cashier": "Thủ quỹ demo",
+      "approvedAt": "2026-10-14",
+      "content": "Chứng từ giảm công nợ theo hồ sơ nguồn"
+    },
+    {
+      "id": "DEMO-GBC-A2",
+      "type": "Giấy báo Có",
+      "customerId": "DEMO-KH-A",
+      "amount": 4000000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Tự động phân bổ",
+      "defaultDebitAccount": "112",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "bank": "Ngân hàng minh họa",
+      "bankAccount": "DEMO-ACCOUNT-MASKED",
+      "bankReference": "DEMO-REF-DEMO-GBC-A2",
+      "transferContent": "Thanh toán công nợ theo chứng từ nguồn",
+      "approvedAt": "2026-10-14",
+      "content": "Thanh toán công nợ theo chứng từ nguồn"
+    },
+    {
+      "id": "DEMO-PT-TRUOC",
+      "type": "Phiếu thu",
+      "customerId": "KH-001",
+      "amount": 1500000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Chỉ ghi giảm",
+      "defaultDebitAccount": "111",
+      "reason": "Khoản trả trước chưa có khoản phải thu đủ điều kiện",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "payer": "Khách hàng A",
+      "cashier": "Thủ quỹ demo",
+      "approvedAt": "2026-10-14",
+      "content": "Khoản trả trước chưa có khoản phải thu đủ điều kiện"
+    },
+    {
+      "id": "DEMO-GBC-CHIDINH",
+      "type": "Giấy báo Có",
+      "customerId": "KH-007",
+      "amount": 1000000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Chỉ định hóa đơn",
+      "defaultDebitAccount": "112",
+      "invoiceId": "HD-GOC-001",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "bank": "Ngân hàng minh họa",
+      "bankAccount": "DEMO-ACCOUNT-MASKED",
+      "bankReference": "DEMO-REF-DEMO-GBC-CHIDINH",
+      "transferContent": "Thanh toán công nợ theo chứng từ nguồn",
+      "approvedAt": "2026-10-14",
+      "content": "Thanh toán công nợ theo chứng từ nguồn"
+    },
+    {
+      "id": "DEMO-PTH-B1",
+      "type": "Phiếu trả hàng",
+      "customerId": "DEMO-KH-B",
+      "amount": 216000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "invoiceId": "DEMO-HD-B1",
+      "net": 200000,
+      "tax": 16000,
+      "taxRate": 0.08,
+      "adjustmentInvoiceId": "DEMO-HDDC-DEMO-PTH-B1",
+      "defaultDebitAccount": "521",
+      "taxAccount": "3331",
+      "reason": "Đề xuất tình huống thử trên tương ớt, số lượng hoặc giá theo hồ sơ mock",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "approvedAt": "2026-10-14",
+      "content": "Đề xuất tình huống thử trên tương ớt, số lượng hoặc giá theo hồ sơ mock",
+      "lines": [
+        {
+          "itemId": "MH-MK500",
+          "quantity": 4,
+          "unitPrice": 50000,
+          "net": 200000,
+          "tax": 16000,
+          "gross": 216000
+        }
+      ]
+    },
+    {
+      "id": "DEMO-BBGG-B1",
+      "type": "Biên bản giảm giá",
+      "customerId": "DEMO-KH-B",
+      "amount": 108000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "invoiceId": "DEMO-HD-B1",
+      "net": 100000,
+      "tax": 8000,
+      "taxRate": 0.08,
+      "adjustmentInvoiceId": "DEMO-HDDC-DEMO-BBGG-B1",
+      "defaultDebitAccount": "521",
+      "taxAccount": "3331",
+      "reason": "Đề xuất tình huống thử trên tương ớt, số lượng hoặc giá theo hồ sơ mock",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "approvedAt": "2026-10-14",
+      "content": "Đề xuất tình huống thử trên tương ớt, số lượng hoặc giá theo hồ sơ mock",
+      "lines": [
+        {
+          "itemId": "MH-MK500",
+          "quantity": 2,
+          "unitPrice": 50000,
+          "net": 100000,
+          "tax": 8000,
+          "gross": 108000
+        }
+      ]
+    },
+    {
+      "id": "DEMO-BBSS-B1",
+      "type": "Biên bản điều chỉnh sai sót",
+      "customerId": "DEMO-KH-B",
+      "amount": 108000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "invoiceId": "DEMO-HD-B1",
+      "net": 100000,
+      "tax": 8000,
+      "taxRate": 0.08,
+      "adjustmentInvoiceId": "DEMO-HDDC-DEMO-BBSS-B1",
+      "defaultDebitAccount": "511",
+      "taxAccount": "3331",
+      "reason": "Đề xuất tình huống thử trên tương ớt, số lượng hoặc giá theo hồ sơ mock",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "approvedAt": "2026-10-14",
+      "content": "Đề xuất tình huống thử trên tương ớt, số lượng hoặc giá theo hồ sơ mock",
+      "lines": [
+        {
+          "itemId": "MH-MK500",
+          "quantity": 2,
+          "unitPrice": 50000,
+          "net": 100000,
+          "tax": 8000,
+          "gross": 108000
+        }
+      ]
+    },
+    {
+      "id": "DEMO-GBC-GIAMHET",
+      "type": "Giấy báo Có",
+      "customerId": "KH-007",
+      "amount": 9000000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Chỉ định hóa đơn",
+      "defaultDebitAccount": "112",
+      "invoiceId": "HD-GOC-001",
+      "scenarioRequirement": "Chạy sau CTDC-001, độc lập với DEMO-GBC-CHIDINH",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "bank": "Ngân hàng minh họa",
+      "bankAccount": "DEMO-ACCOUNT-MASKED",
+      "bankReference": "DEMO-REF-DEMO-GBC-GIAMHET",
+      "transferContent": "Thanh toán công nợ theo chứng từ nguồn",
+      "approvedAt": "2026-10-14",
+      "content": "Thanh toán công nợ theo chứng từ nguồn"
+    },
+    {
+      "id": "DEMO-GBC-KHONGPB",
+      "type": "Giấy báo Có",
+      "customerId": "DEMO-KH-B",
+      "amount": 100000,
+      "issuedAt": "2026-10-15",
+      "sourceApproval": "Đã duyệt tại chức năng nguồn",
+      "postingStatus": "Chưa ghi sổ",
+      "origin": "Đề xuất mock liên thông, không thay số chứng từ hoặc kết quả bộ Ly",
+      "version": 1,
+      "suggestedMode": "Chỉ ghi giảm",
+      "defaultDebitAccount": "112",
+      "reason": "Chờ xác nhận hóa đơn, vẫn ghi giảm số dư khách hàng",
+      "creator": "Người lập demo tại chức năng nguồn",
+      "approvalBy": "Người duyệt demo tại chức năng nguồn",
+      "bank": "Ngân hàng minh họa",
+      "bankAccount": "DEMO-ACCOUNT-MASKED",
+      "bankReference": "DEMO-REF-DEMO-GBC-KHONGPB",
+      "transferContent": "Chờ xác nhận hóa đơn, vẫn ghi giảm số dư khách hàng",
+      "approvedAt": "2026-10-14",
+      "content": "Chờ xác nhận hóa đơn, vẫn ghi giảm số dư khách hàng"
+    }
+  ],
+  "initialAllocations": [
+    {
+      "id": "PB-GOC-001",
+      "invoiceId": "HD-GOC-001",
+      "customerId": "KH-007",
+      "amount": 3000000,
+      "alreadyInOpening": true
+    },
+    {
+      "id": "PB-005",
+      "invoiceId": "HD-005",
+      "customerId": "KH-005",
+      "amount": 3000000,
+      "carriedWithUc01": true,
+      "alreadyInOpening": false
+    }
+  ],
+  "reconciliations": [
+    {
+      "id": "DEMO-DC-001",
+      "customerId": "KH-001",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Đang xử lý",
+      "opening": 0,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 0,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-002",
+      "customerId": "KH-002",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Khớp",
+      "opening": 5000000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 5000000,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": true,
+      "confirmationNote": "Phản hồi mẫu đã xác nhận"
+    },
+    {
+      "id": "DEMO-DC-003",
+      "customerId": "KH-003",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Chờ xử lý",
+      "opening": 0,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 0,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-004",
+      "customerId": "KH-004",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Đang xử lý",
+      "opening": 5000000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 5000000,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-005",
+      "customerId": "KH-005",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Khớp",
+      "opening": 0,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 0,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": true,
+      "confirmationNote": "Phản hồi mẫu đã xác nhận"
+    },
+    {
+      "id": "DEMO-DC-006",
+      "customerId": "KH-006",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Đang xử lý",
+      "opening": 2000000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 2000000,
+      "origin": "Đề xuất bản ghi lịch sử demo",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-007",
+      "customerId": "KH-007",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Chờ xử lý",
+      "opening": 7000000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 7000000,
+      "origin": "Số đối chiếu đầu kỳ khớp số dư nền của khách hàng",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-008",
+      "customerId": "KH-008",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Đang xử lý",
+      "opening": 5000000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 5000000,
+      "origin": "Số đối chiếu đầu kỳ khớp số dư nền của khách hàng",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-A",
+      "customerId": "DEMO-KH-A",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Đang xử lý",
+      "opening": 3240000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 3240000,
+      "origin": "Số đối chiếu đầu kỳ khớp số dư nền của khách hàng",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-B",
+      "customerId": "DEMO-KH-B",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Đang xử lý",
+      "opening": 1080000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 1080000,
+      "origin": "Số đối chiếu đầu kỳ khớp số dư nền của khách hàng",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-C",
+      "customerId": "DEMO-KH-C",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Chưa phản hồi",
+      "opening": 1080000,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 1080000,
+      "origin": "Số đối chiếu đầu kỳ khớp số dư nền của khách hàng",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    },
+    {
+      "id": "DEMO-DC-D",
+      "customerId": "DEMO-KH-D",
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-15",
+      "status": "Chưa phản hồi",
+      "opening": 0,
+      "increase": 0,
+      "decrease": 0,
+      "closing": 0,
+      "origin": "Số đối chiếu đầu kỳ khớp số dư nền của khách hàng",
+      "hasCustomerConfirmation": false,
+      "confirmationNote": null
+    }
+  ],
+  "externalComparisonFixtures": [
+    {
+      "id": "DEMO-FILE-1",
+      "candidateId": "DEMO-TX-1",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-1",
+        "amount": 100000,
+        "balance": 200000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-1",
+        "amount": 100000,
+        "balance": 200000
+      },
+      "expected": "Khớp",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-2",
+      "candidateId": "DEMO-TX-2",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-2",
+        "amount": 200000,
+        "balance": 400000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-2",
+        "amount": 200000,
+        "balance": 400000
+      },
+      "expected": "Khớp",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-3",
+      "candidateId": "DEMO-TX-3",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-3",
+        "amount": 300000,
+        "balance": 600000
+      },
+      "file": {
+        "date": "2026-10-02",
+        "document": "DEMO-TX-3",
+        "amount": 300000,
+        "balance": 600000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-4",
+      "candidateId": "DEMO-TX-4",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-4",
+        "amount": 400000,
+        "balance": 800000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-SAI-SO",
+        "amount": 400000,
+        "balance": 800000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-5",
+      "candidateId": "DEMO-TX-5",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-5",
+        "amount": 500000,
+        "balance": 1000000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-5",
+        "amount": 501000,
+        "balance": 1000000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-6",
+      "candidateId": "DEMO-TX-6",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-6",
+        "amount": 600000,
+        "balance": 1200000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-6",
+        "amount": 600000,
+        "balance": 1201000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-7",
+      "candidateId": "DEMO-TX-7",
+      "system": null,
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-7",
+        "amount": 700000,
+        "balance": 1400000
+      },
+      "expected": "Chờ xử lý",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    },
+    {
+      "id": "DEMO-FILE-8",
+      "candidateId": "DEMO-TX-8",
+      "system": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-8",
+        "amount": 800000,
+        "balance": 1600000
+      },
+      "file": {
+        "date": "2026-10-01",
+        "document": "DEMO-TX-8",
+        "amount": null,
+        "balance": 1600000
+      },
+      "expected": "Lỗi dữ liệu",
+      "origin": "Đề xuất fixture kiểm tra parser, không nhập thành bút toán"
+    }
+  ],
+  "reminderRules": [
+    {
+      "id": "DEMO-RULE-01",
+      "name": "Nhắc nợ quá hạn mẫu",
+      "status": "Đang kích hoạt",
+      "daysPastDue": 1,
+      "minDebt": 1,
+      "daysWithoutNewOrder": 0,
+      "channel": "Zalo",
+      "scanTime": "09:00",
+      "validFrom": "2026-10-01",
+      "validTo": "2026-12-31",
+      "template": "Kính gửi {Ten_KH}, số còn phải trả {So_Tien_No}, quá hạn {So_Ngay_Qua_Han} ngày",
+      "origin": "Kịch bản được nạp sẵn là cấu hình demo, tạo mới form không tự điền số",
+      "timing": "Quá hạn",
+      "frequency": "Hàng ngày"
+    },
+    {
+      "id": "DEMO-RULE-02",
+      "name": "Nhắc nợ sắp đến hạn mẫu",
+      "status": "Đang kích hoạt",
+      "timing": "Trước hạn",
+      "daysPastDue": 7,
+      "minDebt": 1,
+      "daysWithoutNewOrder": 0,
+      "channel": "SMS",
+      "frequency": "Hàng ngày",
+      "scanTime": "09:00",
+      "validFrom": "2026-10-01",
+      "validTo": "2026-12-31",
+      "template": "Kính gửi {Ten_KH}, số còn phải trả {So_Tien_No}, sắp đến hạn trong {So_Ngay_Qua_Han} ngày",
+      "origin": "Ví dụ quy tắc nhắc trước hạn, chỉ chạy khi người dùng quét quy tắc"
+    }
+  ],
+  "configuration": {
+    "earlyWarningDays": 7,
+    "agingBuckets": [
+      30,
+      60,
+      90
+    ],
+    "severityThresholds": [
+      7,
+      30
+    ],
+    "paymentUrl": null,
+    "reportItemAllocation": "Chỉ lấy hóa đơn có dòng hàng và giảm nợ phân bổ theo dòng đã được cung cấp, thiếu thì Chưa đủ căn cứ",
+    "prototypeGateway": "Mô phỏng, không có kết nối Zalo/SMS/Email thật",
+    "closePeriod": "Chỉ mô phỏng kiểm tra, không khẳng định tiêu chí pháp lý",
+    "supportedReminderVariables": [
+      "Ten_KH",
+      "So_Tien_No",
+      "So_Ngay_Qua_Han",
+      "Link_Thanh_Toan"
+    ]
+  },
+  "testScenarios": [
+    {
+      "id": "E2E-01",
+      "reset": true,
+      "steps": [
+        "Ghi nhận CTDC-001",
+        "Ghi nhận DEMO-GBC-GIAMHET, chỉ định HD-GOC-001",
+        "Mở lại thông báo, danh sách chờ, báo cáo"
+      ],
+      "expected": {
+        "customer": "KH-007",
+        "balances": [
+          7000000,
+          9000000,
+          0
+        ],
+        "invoiceOutstanding": 0,
+        "newIncreaseJournals": 1,
+        "newReductionJournals": 1,
+        "pendingReminderForInvoice": false
+      }
+    },
+    {
+      "id": "UC01-NO-DUP",
+      "reset": true,
+      "steps": [
+        "Tiếp nhận CTBH-006",
+        "Nhấn ghi nhận lần nữa"
+      ],
+      "expected": {
+        "customer": "KH-008",
+        "balance": 5000000,
+        "newJournals": 0,
+        "newIntakes": 1
+      }
+    },
+    {
+      "id": "UC01-PREPAID",
+      "reset": true,
+      "steps": [
+        "Tiếp nhận CTBH-005"
+      ],
+      "expected": {
+        "customer": "KH-005",
+        "balance": 7000000,
+        "newAllocationCount": 0
+      }
+    },
+    {
+      "id": "UC02-PARTIAL",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-PT-A1 theo hạn sớm nhất"
+      ],
+      "expected": {
+        "customer": "DEMO-KH-A",
+        "balance": 2240000,
+        "outstandingA1": 1160000,
+        "outstandingA2": 1080000,
+        "unallocated": 0
+      }
+    },
+    {
+      "id": "UC02-OVERPAY",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-GBC-A2"
+      ],
+      "expected": {
+        "customer": "DEMO-KH-A",
+        "balance": -760000,
+        "invoiceOutstanding": 0,
+        "unallocated": 760000
+      }
+    },
+    {
+      "id": "UC02-ADVANCE-THEN-INVOICE",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-PT-TRUOC khi HD-001 chưa được UC01 tiếp nhận",
+        "Tiếp nhận CTBH-001",
+        "Vào Cần phân bổ, phân bổ 1500000 vào HD-001"
+      ],
+      "expected": {
+        "customer": "KH-001",
+        "balances": [
+          -1500000,
+          8500000,
+          8500000
+        ],
+        "invoiceOutstanding": 8500000,
+        "unallocated": 0,
+        "totalNewJournals": 2,
+        "newJournalAtAllocation": 0
+      }
+    },
+    {
+      "id": "UC02-RETURN-DISCOUNT",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-PTH-B1",
+        "Ghi DEMO-BBGG-B1",
+        "Ghi DEMO-BBSS-B1"
+      ],
+      "expected": {
+        "customer": "DEMO-KH-B",
+        "balances": [
+          864000,
+          756000,
+          648000
+        ],
+        "unallocated": 0
+      }
+    },
+    {
+      "id": "UC02-UNALLOCATED",
+      "reset": true,
+      "steps": [
+        "Ghi DEMO-GBC-KHONGPB ở Chỉ ghi giảm"
+      ],
+      "expected": {
+        "customer": "DEMO-KH-B",
+        "balance": 980000,
+        "invoiceOutstanding": 1080000,
+        "unallocated": 100000
+      }
+    },
+    {
+      "id": "UC03-IMMUTABLE",
+      "reset": true,
+      "steps": [
+        "Ghi nhận phản hồi không đồng ý",
+        "Chuyển yêu cầu Bán hàng",
+        "Ghi kết quả xác minh",
+        "Đối chiếu lại"
+      ],
+      "expected": {
+        "arChanges": 0,
+        "noAutoMatch": true
+      }
+    },
+    {
+      "id": "UC04-REVALIDATE",
+      "reset": true,
+      "steps": [
+        "Xem trước thông báo HD-GOC-001",
+        "Ghi DEMO-GBC-CHIDINH tại UC02",
+        "Trở lại bản xem trước và xuất"
+      ],
+      "expected": {
+        "customer": "KH-007",
+        "oldBalance": 7000000,
+        "currentBalance": 6000000,
+        "blockOldExport": true
+      }
+    },
+    {
+      "id": "UC04-REMINDER-SETTLED",
+      "reset": true,
+      "steps": [
+        "Tiếp nhận CTDC-001",
+        "Tạo hàng đợi mô phỏng cho HD-GOC-001",
+        "Ghi DEMO-GBC-GIAMHET",
+        "Duyệt gửi hàng đợi"
+      ],
+      "expected": {
+        "messagesSentForSettled": 0,
+        "balance": 0
+      }
+    }
+  ],
+  "sourceInventory": [
+    {
+      "file": "01-c-t-UC.docx",
+      "sha256": "3e81b452bd3508a6e5abd4080e2a860b4bbcba830d95c91a1d74074f251cab12"
+    },
+    {
+      "file": "02-M-n-h-nh-tr-ng-d-li-u-v-h-nh-vi.xlsx",
+      "sha256": "954a016ada85bd789d1227cfedda9af4b0e2cc236a671e37e8f23c8c685974e2"
+    },
+    {
+      "file": "Mockup_Data_UC02_Ghi_nhan_giam_cong_no (1).xlsx",
+      "sha256": "0e59ed3909cfbda91b1611a07d743ab8619234a52e7bea4b5f301ef98f6e2662"
+    }
+  ],
+  "initialJournals": [
+    {
+      "id": "BT-006",
+      "sourceId": "CTBH-006",
+      "customerId": "KH-008",
+      "gross": 5000000,
+      "alreadyInBalance": true,
+      "lines": [
+        {
+          "side": "Nợ",
+          "account": "131",
+          "amount": 5000000
+        },
+        {
+          "side": "Có",
+          "account": "511",
+          "amount": 4629630
+        },
+        {
+          "side": "Có",
+          "account": "3331",
+          "amount": 370370
+        }
+      ],
+      "origin": "Nguồn chỉ có mã và giá trị, không tự dựng dòng định khoản lịch sử chưa được cung cấp",
+      "date": "2026-10-13"
+    }
+  ],
+  "orders": [
+    {
+      "id": "DH-001",
+      "customerId": "KH-001",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-001",
+      "issuedAt": "2026-10-13"
+    },
+    {
+      "id": "DH-002",
+      "customerId": "KH-002",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-002",
+      "issuedAt": "2026-10-13"
+    },
+    {
+      "id": "DH-005",
+      "customerId": "KH-005",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-005",
+      "issuedAt": "2026-10-13"
+    },
+    {
+      "id": "DEMO-DH-VC-001",
+      "customerId": "KH-006",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-006",
+      "issuedAt": "2026-10-13"
+    },
+    {
+      "id": "DH-008",
+      "customerId": "KH-008",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-008",
+      "issuedAt": "2026-10-13"
+    },
+    {
+      "id": "DEMO-DH-A1",
+      "customerId": "DEMO-KH-A",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách DEMO-KH-A",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 11 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 11 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-09-20",
+        "days": 11,
+        "dueDate": "2026-10-01"
+      }
+    },
+    {
+      "id": "DEMO-DH-B1",
+      "customerId": "DEMO-KH-B",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách DEMO-KH-B",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-09-20",
+        "days": 30,
+        "dueDate": "2026-10-20"
+      }
+    },
+    {
+      "id": "DH-CU-002",
+      "customerId": "KH-002",
+      "issuedAt": "2026-08-01",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "content": "Đơn đặt hàng minh họa của CTBH-CU-002",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-08-01",
+        "days": 30,
+        "dueDate": "2026-08-31"
+      }
+    },
+    {
+      "id": "DH-CU-006",
+      "customerId": "KH-006",
+      "issuedAt": "2026-05-16",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "content": "Đơn đặt hàng minh họa của CTBH-CU-006",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-05-16",
+        "days": 30,
+        "dueDate": "2026-06-15"
+      }
+    },
+    {
+      "id": "DH-GOC-001",
+      "customerId": "KH-007",
+      "issuedAt": "2026-10-01",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "content": "Đơn đặt hàng minh họa của CTBH-GOC-001",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 42 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 42 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-01",
+        "days": 42,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-DH-CHUA-HAN",
+      "customerId": "DEMO-KH-C",
+      "issuedAt": "2026-10-01",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "content": "Đơn đặt hàng minh họa của CTBH-CHUA-HAN",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-01",
+        "days": 30,
+        "dueDate": "2026-10-31"
+      }
+    },
+    {
+      "id": "DEMO-DH-LECH",
+      "customerId": "DEMO-KH-D",
+      "issuedAt": "2026-10-13",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "content": "Đơn đặt hàng minh họa của DEMO-CTBH-LECH",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-DH-CHUADUYET",
+      "customerId": "DEMO-KH-D",
+      "issuedAt": "2026-10-13",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "content": "Đơn đặt hàng minh họa của DEMO-CTBH-CHUADUYET",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-DH-VANBAN",
+      "customerId": "DEMO-KH-D",
+      "issuedAt": "2026-10-13",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "content": "Đơn đặt hàng minh họa của DEMO-CTBH-VANBAN",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    },
+    {
+      "id": "DEMO-DH-KHONGHAN",
+      "customerId": "DEMO-KH-D",
+      "issuedAt": "2026-10-13",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "content": "Đơn đặt hàng minh họa của DEMO-CTBH-KHONGHAN",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-10-13",
+        "days": 30,
+        "dueDate": "2026-11-12"
+      }
+    }
+  ],
+  "contracts": [
+    {
+      "id": "HDONG-001",
+      "customerId": "KH-003",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-003",
+      "issuedAt": "2026-10-13"
+    },
+    {
+      "id": "HDONG-002",
+      "customerId": "KH-004",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách KH-004",
+      "issuedAt": "2026-10-13"
+    },
+    {
+      "id": "DEMO-HOPDONG-A",
+      "customerId": "DEMO-KH-A",
+      "origin": "Mã từ nguồn nếu đã có, nội dung chi tiết là mock bổ sung",
+      "content": "Hồ sơ liên kết minh họa cho khách DEMO-KH-A",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 25 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 25 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-09-20",
+        "days": 25,
+        "dueDate": "2026-10-15"
+      }
+    },
+    {
+      "id": "HDONG-CU-004",
+      "customerId": "KH-004",
+      "issuedAt": "2026-07-01",
+      "origin": "Hồ sơ liên kết đồng bộ với hóa đơn và chứng từ nguồn",
+      "content": "Hợp đồng minh họa của CTBH-CU-004",
+      "paymentTerms": {
+        "type": "afterDays",
+        "text": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "description": "Thanh toán trong 30 ngày kể từ ngày hóa đơn",
+        "approved": true,
+        "dayBasis": "calendar",
+        "baseDate": "2026-07-01",
+        "days": 30,
+        "dueDate": "2026-07-31"
+      }
+    }
+  ]
+}

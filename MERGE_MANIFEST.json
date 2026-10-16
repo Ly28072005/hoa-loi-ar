@@ -1,0 +1,27 @@
+{
+  "project": "HTX Hoa Loi 5-UC prototype with new UC03 from Luân",
+  "baseline": "Tạo prototype tương tác.zip",
+  "uc03_source": "Web prototype cho công nợ.zip",
+  "unchangedBaselineSourceFiles": 36,
+  "onlyChangedBaselineFile": [
+    "src/Reconcile.tsx"
+  ],
+  "addedFiles": [
+    "UC03_INTEGRATION_README.md",
+    "src/uc03/Reconciliation.tsx",
+    "src/uc03/money.ts",
+    "src/uc03/reconciliationModel.ts",
+    "src/uc03/uc03-isolated.css",
+    "src/uc03/ui.tsx",
+    "tests/uc03-reconciliation.test.mjs"
+  ],
+  "deletedBaselineFiles": [],
+  "tests": {
+    "originalSharedLogic": "passed existing non-UI logic checks",
+    "uc03NewModel": "4/4 passed",
+    "typescriptParser": "passed after minimal inline type declaration repairs",
+    "fullViteBuild": "not confirmed; npm dependency installation timed out"
+  },
+  "dataBoundary": "UC03 fixture localStorage isolated. Not live-synchronized with 4 other UC stores.",
+  "sourceCode": "React + Vite source, not built static site."
+}
